@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
-import ItemList from './src/ItemList.vue/index.js';
+import ItemList from './ItemList.vue';
 
 let i = 0;
 let message = ref('');
