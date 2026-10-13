@@ -37,13 +37,22 @@ let toDoItems = computed(() => sortByImportance(items.value.filter(item => !item
                 <input @keydown.enter="add" v-model="message" class="input" type="text" placeholder="Add item">
             </div>
             <div class="control">
+                <div class="select">
+                    <select v-model="importance" aria-label="Importance">
+                        <option value="high">High | !!!</option>
+                        <option value="medium">Medium | !!</option>
+                        <option value="low">Low | !</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control">
                 <button @click="add" class="button is-info">
                     Add
                 </button>
             </div>
         </div>
         
-        <ItemList :items="items" title="All Items"></ItemList>
+        <ItemList :items="sortedItems" title="All Items"></ItemList>
         <ItemList :items="doneItems" title="Done Items"></ItemList>
         <ItemList :items="toDoItems" title="TODO"></ItemList>
     </div>
