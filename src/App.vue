@@ -6,10 +6,10 @@ let i = 1;
 let message = ref('');
 let importance = ref('medium');
 let items = ref([
-    {id: i++, text: 'Apple', isDone: false},
-    {id: i++, text: 'Pineapple', isDone: true},
-    {id: i++, text: 'Grape', isDone: false},
-    {id: i++, text: 'Green Apple', isDone: true},
+    {id: i++, text: 'Apple', isDone: false, importance: 'high'},
+    {id: i++, text: 'Pineapple', isDone: true, importance: 'low'},
+    {id: i++, text: 'Grape', isDone: false, importance: 'medium'},
+    {id: i++, text: 'Green Apple', isDone: true, importance: 'high'},
 ]);
 
 const importanceOrder = {high: 3, medium: 2, low: 1};
