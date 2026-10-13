@@ -1,3 +1,121 @@
 @use 'bulma/sass' with (
-    $primary: coral,
+    $primary: #15803d,
+    $info: #15803d,
 );
+
+:root {
+    color-scheme: light;
+    --page-background: #c9f9d5;
+    --surface-background: #ecffeb;
+    --text-color: #17231b;
+    --muted-color: #647268;
+    --border-color: #dce7de;
+    --item-background: #f8fbf8;
+    --accent-color: #15803d;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --page-background: #00180c;
+        --surface-background: #1f3225;
+        --text-color: #edf5ef;
+        --muted-color: #a3b2a7;
+        --border-color: #0b1a0e;
+        --item-background: #162618;
+        --accent-color: #1cb855;
+    }
+}
+
+html {
+    min-height: 100%;
+    background: var(--page-background);
+}
+
+body {
+    min-height: 100vh;
+    background: var(--page-background);
+    color: var(--text-color);
+}
+
+.container.content.mt-2 {
+    max-width: 46rem;
+    margin: 3rem auto !important;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    background: var(--surface-background);
+    box-shadow: 0 1rem 2.5rem rgb(20 50 28 / 8%);
+}
+
+.field.has-addons {
+    margin-bottom: 2rem;
+}
+
+.input,
+.button {
+    min-height: 2.75rem;
+    border-color: var(--border-color);
+}
+
+.input {
+    background: var(--surface-background);
+    color: var(--text-color);
+    border-radius: 2.75em;
+}
+
+.input::placeholder {
+    color: var(--muted-color);
+}
+
+.button.is-info {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.button.is-info:hover {
+    filter: brightness(0.92);
+}
+
+.container.content h1 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.container.content ul {
+    margin-top: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+.container.content li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    background: var(--item-background);
+    color: var(--text-color);
+}
+
+.container.content input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: 0 0 auto;
+    accent-color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .container.content.mt-2 {
+        margin: 1rem !important;
+        padding: 1.25rem;
+    }
+}
