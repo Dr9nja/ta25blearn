@@ -1,0 +1,15 @@
+{
+  "name": "ta25blearn",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "vite": "^8.3.4"
+  }
+}
