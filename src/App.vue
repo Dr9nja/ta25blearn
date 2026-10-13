@@ -20,13 +20,14 @@ function sortByImportance(list) {
 
 function add(){
   if(message.value.trim() !== ''){
-    items.value.push({id: i++, text: message.value.trim(), isDone: false});
+    items.value.push({id: i++, text: message.value.trim(), isDone: false, importance: importance.value});
   }
   message.value = '';
 }
 
-let doneItems = computed(() => items.value.filter(item => item.isDone));
-let toDoItems = computed(() => items.value.filter(item => !item.isDone));
+let sortedItems = computed(() => sortByImportance(items.value));
+let doneItems = computed(() => sortByImportance(items.value.filter(item => item.isDone)));
+let toDoItems = computed(() => sortByImportance(items.value.filter(item => !item.isDone)));
 </script>
 
 <template>
