@@ -106,11 +106,37 @@ body {
     color: var(--text-color);
 }
 
+.container.content li.priority-high {
+    border-color: var(--bulma-danger);
+}
+
+.container.content li.priority-medium {
+    border-color: var(--bulma-warning);
+}
+
+.container.content li.priority-low {
+    border-color: var(--bulma-success);
+}
+
+.item-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0;
+}
+
 .container.content input[type="checkbox"] {
     width: 1.1rem;
     height: 1.1rem;
     flex: 0 0 auto;
     accent-color: var(--accent-color);
+}
+
+.select select {
+    min-height: 2.75rem;
+    border-color: var(--border-color);
+    background: var(--surface-background);
+    color: var(--text-color);
 }
 
 @media (max-width: 600px) {
