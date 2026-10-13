@@ -1,5 +1,17 @@
 <script setup>
 defineProps(['items','title']);
+
+const importanceLabels = {
+    high: 'High',
+    medium: 'Medium',
+    low: 'Low',
+};
+
+const importanceClasses = {
+    high: 'is-danger',
+    medium: 'is-warning',
+    low: 'is-success',
+};
 </script>
 <template>
     <h1>{{ title }}</h1>
