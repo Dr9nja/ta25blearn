@@ -4,12 +4,19 @@ import ItemList from './ItemList.vue';
 
 let i = 1;
 let message = ref('');
+let importance = ref('medium');
 let items = ref([
     {id: i++, text: 'Apple', isDone: false},
     {id: i++, text: 'Pineapple', isDone: true},
     {id: i++, text: 'Grape', isDone: false},
     {id: i++, text: 'Green Apple', isDone: true},
 ]);
+
+const importanceOrder = {high: 3, medium: 2, low: 1};
+
+function sortByImportance(list) {
+  return [...list].sort((a, b) => importanceOrder[b.importance] - importanceOrder[a.importance]);
+}
 
 function add(){
   if(message.value.trim() !== ''){
