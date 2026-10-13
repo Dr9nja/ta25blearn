@@ -1,5 +1,6 @@
-console.log("Hello via Bun!");
-import fs from "fs";
+import { createApp } from "vue";
 
-let text = fs.readFileSync("./index.js", "utf-8");
-console.log(text);
+import App from './App.vue';
+
+const app = createApp(App);
+app.mount('#app');
