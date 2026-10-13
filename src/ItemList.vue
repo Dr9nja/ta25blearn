@@ -2,9 +2,9 @@
 defineProps(['items','title']);
 
 const importanceLabels = {
-    high: 'High',
-    medium: 'Medium',
-    low: 'Low',
+    high: '!!!',
+    medium: '!!',
+    low: '!',
 };
 
 const importanceClasses = {
@@ -16,9 +16,14 @@ const importanceClasses = {
 <template>
     <h1>{{ title }}</h1>
     <ul>
-        <li v-for="item in items" :key="item.id">
+        <li v-for="item in items" :key="item.id" :class="`priority-${item.importance}`">
             {{ item.text }}
-            <input type="checkbox" v-model="item.isDone">
+            <span class="item-meta">
+                <span class="tag" :class="importanceClasses[item.importance]">
+                    {{ importanceLabels[item.importance] }}
+                </span>
+                <input type="checkbox" v-model="item.isDone" :aria-label="`Mark ${item.text} as done`">
+            </span>
         </li>
     </ul>
 </template>
